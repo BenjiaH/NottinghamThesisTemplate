@@ -1,0 +1,104 @@
+\documentclass[11pt]{article}
+
+\usepackage{geometry}
+% \geometry{a4paper,left=31.7mm,right=31.7mm,top=25.4mm,bottom=25.4mm}
+\include{report.preamble}
+
+% Configure reference style
+% ----------IEEE reference style----------
+\usepackage{cite}
+\newcommand{\vRefSty}{ieeetran}
+
+% % ----------APA reference style----------
+% \usepackage{apacite}
+% \usepackage{natbib}
+% \newcommand{\vRefSty}{apacite}
+
+% Document information definitions
+\newcommand{\vTitle}{Title}
+\newcommand{\vProject}{Project}
+\newcommand{\vModule}{Module}
+\newcommand{\vAuthor}{Author}
+\newcommand{\vID}{ID}
+\newcommand{\vKeyWords}{[KeyWords]}
+
+% Space definitions
+\newcommand{\vSpaceTitleName}{60 pt}
+\newcommand{\vSpaceLogiTitle}{20 pt}
+\newcommand{\vSpaceNameSupervisor}{20 pt}
+
+% Typeset title and author
+\title{\huge{\vTitle}\\\vspace{10 pt}\huge{\vModule}\vspace{\vSpaceTitleName}}
+\author{\huge{\vAuthor}\\{\small{\vID}}}
+\date{}
+
+% Write PDF attributes
+\hypersetup{
+    pdftitle={\vTitle},
+    pdfauthor={\vAuthor},
+    pdfsubject={\vModule},
+    pdfkeywords={\vKeyWords}
+}
+
+% ----------------------------BEGINNING OF DOC----------------------------
+\begin{document}
+
+% ----------------------------TITLE PAGE----------------------------
+% UoN LOGO
+\begin{titlepage}
+\begin{figure}
+    % \vspace{10 pt}
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/UoN_logo.png}
+\end{figure}
+
+% Info of the doc
+\vfill
+\vspace{\vSpaceLogiTitle}
+\maketitle
+\vspace{\vSpaceNameSupervisor}
+\centering{\huge{Supervisor: }}\\
+\vfill
+
+\centering{University of Nottingham}\\
+\vspace{10 pt}
+\centering{\today}
+\thispagestyle{empty}
+\pagebreak
+\end{titlepage}
+
+% ----------------------------ABSTRACT PAGE----------------------------
+% \begin{abstract}
+
+% \end{abstract}
+% \keywords{}
+% % Config page style
+% \pagenumbering{Roman}
+% \setcounter{page}{1}
+% \thispagestyle{plain}
+% \pagebreak
+
+% ----------------------------TABLE OF CONTENTS----------------------------
+\tableofcontents
+\thispagestyle{empty}
+\pagebreak
+
+% ----------------------------BODY----------------------------
+% Config page style of main body
+\pagenumbering{arabic}
+\pagestyle{plain}
+\setcounter{page}{1}
+
+\section{Introduction}
+\cite{example}
+
+% ----------------------------REFRENCES----------------------------
+\pagebreak
+\bibliographystyle{\vRefSty}
+\bibliography{exportlist}
+\addcontentsline{toc}{section}{References}
+
+% ----------------------------END OF DOC----------------------------
+\end{document}
+
+% ----------------------------EOF----------------------------
